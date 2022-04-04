@@ -1,0 +1,65 @@
+{
+	"name": "itens",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Itens",
+					"sid": 517455593961456,
+					"parameters": {
+						"object": "inventario"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "inventario",
+					"sid": 703671311007783,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Itens",
+					"sid": 252335681347402,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 552313562116310
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Itens",
+					"sid": 224777416540462,
+					"parameters": {
+						"object": "inventario"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "inventario",
+					"sid": 628236314341675
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Itens",
+					"sid": 488822843397001,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 208611971849117
+		}
+	],
+	"sid": 459670821383752
+}

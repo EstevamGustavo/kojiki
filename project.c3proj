@@ -17,15 +17,7 @@
 		{
 			"type": "plugin",
 			"id": "Tilemap",
-			"name": "Mosaico",
-			"author": "Scirra",
-			"version": "r285.3",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Keyboard",
-			"name": "Teclado",
+			"name": "Tilemap",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -39,9 +31,25 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Sólido",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -49,7 +57,7 @@
 		{
 			"type": "behavior",
 			"id": "Bullet",
-			"name": "Projétil",
+			"name": "Bullet",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -57,7 +65,7 @@
 		{
 			"type": "behavior",
 			"id": "NoSave",
-			"name": "Não salvar",
+			"name": "No save",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -65,7 +73,7 @@
 		{
 			"type": "behavior",
 			"id": "destroy",
-			"name": "Destruir fora do layout",
+			"name": "Destroy outside layout",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -73,7 +81,7 @@
 		{
 			"type": "behavior",
 			"id": "bound",
-			"name": "Restrito ao layout",
+			"name": "Bound to layout",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -81,7 +89,7 @@
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direções",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -89,7 +97,15 @@
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "Centrar em",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -97,19 +113,13 @@
 	],
 	"uniqueId": "t6hmqflyd72",
 	"objectTypes": {
-		"items": [
-			"Sprite",
-			"Sprite2",
-			"Sprite3",
-			"Teclado",
-			"Mouse",
-			"Sprite4"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
 					"collision_01",
-					"entrance_00"
+					"entrance_00",
+					"Sprite4"
 				],
 				"subfolders": [],
 				"name": "collisions"
@@ -137,36 +147,103 @@
 				"name": "tileset"
 			},
 			{
-				"items": [],
+				"items": [
+					"char_set",
+					"inventario"
+				],
 				"subfolders": [],
 				"name": "hud"
 			},
 			{
 				"items": [
-					"char_00"
+					"char_00",
+					"char_box",
+					"Sprite7"
 				],
 				"subfolders": [
 					{
-						"items": [],
-						"subfolders": [],
-						"name": "weapons"
-					},
-					{
 						"items": [
-							"fire_bolt"
+							"fire_bolt",
+							"RayOfFrost"
 						],
 						"subfolders": [],
 						"name": "skills"
 					}
 				],
 				"name": "character"
+			},
+			{
+				"items": [
+					"Sprite",
+					"Sprite2",
+					"Sprite3"
+				],
+				"subfolders": [],
+				"name": "map"
+			},
+			{
+				"items": [
+					"Mouse",
+					"Teclado"
+				],
+				"subfolders": [],
+				"name": "gamepad"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [],
+						"subfolders": [
+							{
+								"items": [
+									"id_00",
+									"id_03",
+									"id_04",
+									"id_05"
+								],
+								"subfolders": [],
+								"name": "staffs"
+							},
+							{
+								"items": [
+									"id_01",
+									"id_06",
+									"id_07"
+								],
+								"subfolders": [],
+								"name": "swords"
+							},
+							{
+								"items": [
+									"id_02"
+								],
+								"subfolders": [],
+								"name": "bows"
+							},
+							{
+								"items": [
+									"id_08",
+									"id_09"
+								],
+								"subfolders": [],
+								"name": "daggers"
+							}
+						],
+						"name": "weapons"
+					}
+				],
+				"name": "itens"
 			}
 		]
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"hud",
+			"Itens"
+		],
 		"subfolders": []
 	},
 	"layouts": {
@@ -177,10 +254,31 @@
 	},
 	"eventSheets": {
 		"items": [
-			"Folha de eventos 1",
-			"Event sheet 1"
+			"Folha de eventos 1"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"itens"
+				],
+				"subfolders": [
+					{
+						"items": [],
+						"subfolders": [
+							{
+								"items": [
+									"id_00"
+								],
+								"subfolders": [],
+								"name": "staffs"
+							}
+						],
+						"name": "weapons"
+					}
+				],
+				"name": "itens"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {
@@ -287,7 +385,7 @@
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
-		"pixelRounding": false,
+		"pixelRounding": true,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
@@ -319,7 +417,7 @@
 		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
-		"sampling": "trilinear",
+		"sampling": "nearest",
 		"downscaling": "medium",
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",

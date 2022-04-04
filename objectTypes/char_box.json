@@ -1,0 +1,115 @@
+{
+	"name": "char_box",
+	"plugin-id": "Sprite",
+	"sid": 903137218120187,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "action",
+			"type": "string",
+			"desc": "",
+			"sid": 358845489605760
+		},
+		{
+			"name": "animation",
+			"type": "string",
+			"desc": "",
+			"sid": 508919642373903
+		},
+		{
+			"name": "directions",
+			"type": "string",
+			"desc": "",
+			"sid": 916058471903439
+		},
+		{
+			"name": "speed",
+			"type": "number",
+			"desc": "",
+			"sid": 631284770293591
+		},
+		{
+			"name": "act_weapon",
+			"type": "string",
+			"desc": "",
+			"sid": 422657313303862
+		},
+		{
+			"name": "act_hp",
+			"type": "number",
+			"desc": "",
+			"sid": 495557364371383
+		},
+		{
+			"name": "full_hp",
+			"type": "number",
+			"desc": "",
+			"sid": 246976346829597
+		},
+		{
+			"name": "act_mp",
+			"type": "number",
+			"desc": "",
+			"sid": 543520016139044
+		},
+		{
+			"name": "full_mp",
+			"type": "number",
+			"desc": "",
+			"sid": 324214372400709
+		},
+		{
+			"name": "atk_speed",
+			"type": "number",
+			"desc": "",
+			"sid": 593947299558099
+		},
+		{
+			"name": "cast_speed",
+			"type": "number",
+			"desc": "",
+			"sid": 973518361117224
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 684814361509900
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 859727697862026
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6790062,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 163475162528315,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

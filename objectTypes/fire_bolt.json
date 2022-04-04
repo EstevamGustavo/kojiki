@@ -29,8 +29,8 @@
 					{
 						"width": 32,
 						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.0625,
+						"originY": 0.53125,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
@@ -72,8 +72,8 @@
 					{
 						"width": 32,
 						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.0625,
+						"originY": 0.53125,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
@@ -115,8 +115,8 @@
 					{
 						"width": 32,
 						"height": 32,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.03125,
+						"originY": 0.53125,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,

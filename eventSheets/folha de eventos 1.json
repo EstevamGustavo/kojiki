@@ -4,7 +4,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "moviment - walk",
+			"title": "moviment",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -12,19 +12,19 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-moving",
-							"objectClass": "char_00",
-							"sid": 283883555097757,
-							"behaviorType": "8Direções"
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 227549770875871
 						}
 					],
 					"actions": [
 						{
-							"id": "set-animation-speed",
+							"id": "set-position-to-another-object",
 							"objectClass": "char_00",
-							"sid": 554441028520214,
+							"sid": 559449592863544,
 							"parameters": {
-								"speed": "15"
+								"object": "char_box",
+								"image-point-optional": "0"
 							}
 						}
 					],
@@ -34,47 +34,71 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 341312960722416
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-speed",
-							"objectClass": "char_00",
-							"sid": 940726889255915,
+							"id": "compare-instance-variable",
+							"objectClass": "char_box",
+							"sid": 364063351773169,
 							"parameters": {
-								"speed": "0"
+								"instance-variable": "action",
+								"comparison": 0,
+								"value": "\"stand\""
 							}
 						}
 					],
-					"sid": 842397989180071,
+					"actions": [],
+					"sid": 271301834793179,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-animation-frame",
+									"id": "is-moving",
+									"objectClass": "char_box",
+									"sid": 352660254047176,
+									"behaviorType": "8Direction"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-speed",
 									"objectClass": "char_00",
-									"sid": 125344286526601,
+									"sid": 265003826801294,
 									"parameters": {
-										"comparison": 1,
-										"number": "1"
+										"speed": "15"
+									}
+								}
+							],
+							"sid": 959999918457511
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 303513882910258
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "char_box",
+									"sid": 822754533097102,
+									"parameters": {
+										"instance-variable": "directions",
+										"comparison": 0,
+										"value": "\"down\""
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-animation-frame",
+									"id": "set-animation-speed",
 									"objectClass": "char_00",
-									"sid": 703278364806651,
+									"sid": 759169947199810,
 									"parameters": {
-										"frame-number": "1"
+										"speed": "0"
 									}
 								}
 							],
-							"sid": 972846601276010
+							"sid": 427280715352201
 						}
 					]
 				},
@@ -82,137 +106,322 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Teclado",
-							"sid": 713011123978281,
+							"id": "compare-instance-variable",
+							"objectClass": "char_box",
+							"sid": 816428954000015,
 							"parameters": {
-								"key": 68
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "char_00",
-							"sid": 623136632957810,
-							"behaviorType": "8Direções",
-							"parameters": {
-								"control": "right"
+								"instance-variable": "action",
+								"comparison": 0,
+								"value": "\"stand\""
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "char_00",
-							"sid": 905475906230915,
+							"id": "compare-instance-variable",
+							"objectClass": "char_box",
+							"sid": 936501821351194,
 							"parameters": {
-								"instance-variable": "directions",
-								"value": "\"walk_right\""
+								"instance-variable": "action",
+								"comparison": 0,
+								"value": "\"walk\""
 							}
 						}
 					],
-					"sid": 181800615715704
+					"actions": [],
+					"sid": 990717300660104,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Teclado",
+									"sid": 556853038560931,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 792713907742475,
+									"parameters": {
+										"instance-variable": "directions",
+										"value": "\"right\""
+									}
+								},
+								{
+									"id": "simulate-control",
+									"objectClass": "char_box",
+									"sid": 246440371330680,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 993174129654175,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"walk\""
+									}
+								}
+							],
+							"sid": 328103482936557
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Teclado",
+									"sid": 367632376306341,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 769535543873228,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"walk\""
+									}
+								},
+								{
+									"id": "simulate-control",
+									"objectClass": "char_box",
+									"sid": 521384100128323,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 583366100619159,
+									"parameters": {
+										"instance-variable": "directions",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 862912908436631
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Teclado",
+									"sid": 327172906948605,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 173905559935110,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"walk\""
+									}
+								},
+								{
+									"id": "simulate-control",
+									"objectClass": "char_box",
+									"sid": 430007841186474,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 421518917801121,
+									"parameters": {
+										"instance-variable": "directions",
+										"value": "\"up\""
+									}
+								}
+							],
+							"sid": 393748974095925
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Teclado",
+									"sid": 341529102452968,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 325366875892463,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"walk\""
+									}
+								},
+								{
+									"id": "simulate-control",
+									"objectClass": "char_box",
+									"sid": 606245275449426,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 965538950747608,
+									"parameters": {
+										"instance-variable": "directions",
+										"value": "\"down\""
+									}
+								}
+							],
+							"sid": 374607212215884
+						}
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "key-is-down",
-							"objectClass": "Teclado",
-							"sid": 618824229891933,
+							"id": "compare-instance-variable",
+							"objectClass": "char_box",
+							"sid": 819499229378731,
 							"parameters": {
-								"key": 65
+								"instance-variable": "action",
+								"comparison": 0,
+								"value": "\"walk\""
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 250822486783170,
+					"children": [
 						{
-							"id": "simulate-control",
-							"objectClass": "char_00",
-							"sid": 804918705638733,
-							"behaviorType": "8Direções",
-							"parameters": {
-								"control": "left"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-released",
+									"objectClass": "Teclado",
+									"sid": 352288483888125,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 821161657735111,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"stand\""
+									}
+								}
+							],
+							"sid": 990650495843775
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "char_00",
-							"sid": 374800089967517,
-							"parameters": {
-								"instance-variable": "directions",
-								"value": "\"walk_left\""
-							}
-						}
-					],
-					"sid": 586331887362793
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Teclado",
-							"sid": 859137426110368,
-							"parameters": {
-								"key": 87
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "char_00",
-							"sid": 144250449261863,
-							"behaviorType": "8Direções",
-							"parameters": {
-								"control": "up"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-released",
+									"objectClass": "Teclado",
+									"sid": 975383115366981,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 303692376967945,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"stand\""
+									}
+								}
+							],
+							"sid": 785538534146018
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "char_00",
-							"sid": 267378989987526,
-							"parameters": {
-								"instance-variable": "directions",
-								"value": "\"walk_up\""
-							}
-						}
-					],
-					"sid": 874534020224460
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Teclado",
-							"sid": 648251765454936,
-							"parameters": {
-								"key": 83
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "char_00",
-							"sid": 853042874975437,
-							"behaviorType": "8Direções",
-							"parameters": {
-								"control": "down"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-released",
+									"objectClass": "Teclado",
+									"sid": 121799070410989,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 703953407529186,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"stand\""
+									}
+								}
+							],
+							"sid": 551066323759224
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "char_00",
-							"sid": 111412793184812,
-							"parameters": {
-								"instance-variable": "directions",
-								"value": "\"walk_down\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-released",
+									"objectClass": "Teclado",
+									"sid": 517113206071128,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 749688153181224,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"stand\""
+									}
+								}
+							],
+							"sid": 870976421912783
 						}
-					],
-					"sid": 372859113416139
+					]
 				},
 				{
 					"eventType": "block",
@@ -227,9 +436,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "char_00",
-							"sid": 377250524458489,
+							"sid": 535133809232836,
 							"parameters": {
-								"animation": "char_00.directions",
+								"animation": "char_box.action & \"_\" & char_box.directions",
 								"from": "beginning"
 							}
 						}
@@ -252,150 +461,484 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Teclado",
-							"sid": 751795291611558,
+							"sid": 390971055789434,
 							"parameters": {
-								"key": 32
+								"key": 49
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 167168900973088,
-							"parameters": {
-								"object-to-create": "fire_bolt",
-								"layer": "char_00.LayerName",
-								"x": "char_00.X",
-								"y": "char_00.Y",
-								"create-hierarchy": false
-							}
-						}
-					],
-					"sid": 521789862288443,
+					"actions": [],
+					"sid": 321969436866198,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "char_00",
-									"sid": 728512520505712,
+									"objectClass": "char_box",
+									"sid": 919243236238145,
 									"parameters": {
-										"instance-variable": "directions",
+										"instance-variable": "action",
 										"comparison": 0,
-										"value": "\"walk_right\""
+										"value": "\"stand\""
 									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "fire_bolt",
-									"sid": 648553343996255,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "0"
-									}
-								}
-							],
-							"sid": 656653273866923
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "char_00",
-									"sid": 559906275019168,
+									"objectClass": "char_box",
+									"sid": 911621707004550,
 									"parameters": {
-										"instance-variable": "directions",
+										"instance-variable": "action",
 										"comparison": 0,
-										"value": "\"walk_left\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "fire_bolt",
-									"sid": 242604718959042,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "180"
-									}
-								}
-							],
-							"sid": 165953772065079
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "char_00",
-									"sid": 374632743253489,
-									"parameters": {
-										"instance-variable": "directions",
-										"comparison": 0,
-										"value": "\"walk_up\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "fire_bolt",
-									"sid": 860694241789552,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "270"
-									}
-								}
-							],
-							"sid": 429210446110164
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "char_00",
-									"sid": 153998406474298,
-									"parameters": {
-										"instance-variable": "directions",
-										"comparison": 0,
-										"value": "\"walk_down\""
+										"value": "\"walk\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "char_00",
-									"sid": 702798658636537,
-									"disabled": true,
+									"objectClass": "char_box",
+									"sid": 696240930029688,
 									"parameters": {
-										"instance-variable": "directions",
-										"value": "\"atack_down\""
-									}
-								},
-								{
-									"id": "set-angle-of-motion",
-									"objectClass": "fire_bolt",
-									"sid": 714917679858680,
-									"behaviorType": "Bullet",
-									"parameters": {
-										"angle": "90"
+										"instance-variable": "action",
+										"value": "char_box.act_weapon"
 									}
 								}
 							],
-							"sid": 838746288077946
+							"sid": 911768017504161,
+							"isOrBlock": true
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "char_box",
+							"sid": 778940379673617,
+							"parameters": {
+								"instance-variable": "action",
+								"comparison": 0,
+								"value": "\"cast\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 739145703740506,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-animation-finished",
+									"objectClass": "char_00",
+									"sid": 795922388310481
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "char_box",
+									"sid": 601580978889992,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"stand\""
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 891866033603815,
+									"parameters": {
+										"object-to-create": "fire_bolt",
+										"layer": "char_box.LayerName",
+										"x": "char_box.X",
+										"y": "char_box.Y",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 161820440528792,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "char_box",
+											"sid": 108656235168308,
+											"parameters": {
+												"instance-variable": "directions",
+												"comparison": 0,
+												"value": "\"right\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "fire_bolt",
+											"sid": 220513220463294,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-y",
+											"objectClass": "fire_bolt",
+											"sid": 429307417062099,
+											"parameters": {
+												"y": "Self.Y - 5"
+											}
+										}
+									],
+									"sid": 140396953701680
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "char_box",
+											"sid": 633292104847374,
+											"parameters": {
+												"instance-variable": "directions",
+												"comparison": 0,
+												"value": "\"left\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "fire_bolt",
+											"sid": 726928882333526,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "180"
+											}
+										},
+										{
+											"id": "set-y",
+											"objectClass": "fire_bolt",
+											"sid": 651103877806322,
+											"parameters": {
+												"y": "Self.Y - 5"
+											}
+										}
+									],
+									"sid": 489293175739636
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "char_box",
+											"sid": 542941618691066,
+											"parameters": {
+												"instance-variable": "directions",
+												"comparison": 0,
+												"value": "\"up\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "fire_bolt",
+											"sid": 486665305667772,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "270"
+											}
+										}
+									],
+									"sid": 802373130048635
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "char_box",
+											"sid": 329323989990781,
+											"parameters": {
+												"instance-variable": "directions",
+												"comparison": 0,
+												"value": "\"down\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "char_00",
+											"sid": 901726820826275,
+											"disabled": true,
+											"parameters": {
+												"instance-variable": "directions",
+												"value": "\"atack_down\""
+											}
+										},
+										{
+											"id": "set-angle-of-motion",
+											"objectClass": "fire_bolt",
+											"sid": 209187197452035,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"angle": "90"
+											}
+										}
+									],
+									"sid": 596339302751336
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 680837049161228,
+											"parameters": {
+												"seconds": "0.01"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "fire_bolt",
+											"sid": 899022196714568,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 569402082824725
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 910608395432855,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "fire_bolt",
+							"sid": 266695372081546,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.y"
+							}
+						}
+					],
+					"sid": 521789862288443
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Teclado",
+							"sid": 317133319076788,
+							"parameters": {
+								"key": 84
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "char_box",
+							"sid": 936135687829959,
+							"parameters": {
+								"instance-variable": "directions",
+								"value": "\"death\""
+							}
+						}
+					],
+					"sid": 265386117004546
 				}
 			],
 			"sid": 692152424034006
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "actions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 250734001620741
+		},
+		{
+			"eventType": "script",
+			"script": ""
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "hud",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 348212685720544
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "hud",
+							"sid": 624552661544598,
+							"behaviorType": "Pin2",
+							"parameters": {
+								"pin-to": "char_00",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 460222361109414
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Teclado",
+							"sid": 362622423700542,
+							"parameters": {
+								"key": 192
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "hud",
+							"sid": 239454665328827,
+							"parameters": {
+								"visibility": "toggle"
+							}
+						}
+					],
+					"sid": 469485062520360
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 883108717780491,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "id_00"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "id_00",
+							"sid": 145044408219746,
+							"parameters": {
+								"instance-variable": "drop"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "id_00",
+							"sid": 677674731606691,
+							"parameters": {
+								"object": "inventario",
+								"image-point-optional": "inventario.local"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "inventario",
+							"sid": 997355547958240,
+							"parameters": {
+								"instance-variable": "local",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "id_00",
+							"sid": 593762277592590,
+							"parameters": {
+								"instance-variable": "drop",
+								"value": "false"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "hud",
+							"sid": 313408758650969,
+							"parameters": {
+								"child": "id_00",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": true,
+								"transform-z-elevation": true,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "id_00",
+							"sid": 497516747738145
+						}
+					],
+					"sid": 669803486502359
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "id_00",
+							"sid": 177307552422321,
+							"parameters": {
+								"object": "inventario",
+								"image-point-optional": "inventario.local"
+							}
+						}
+					],
+					"sid": 104307521225556
+				}
+			],
+			"sid": 224602957772397
 		}
 	],
 	"sid": 588866257436957

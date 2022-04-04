@@ -1,0 +1,18 @@
+{
+	"name": "hud",
+	"plugin-id": "Sprite",
+	"sid": 554781913173974,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin2",
+			"sid": 256755727212921
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"char_set",
+		"inventario"
+	]
+}

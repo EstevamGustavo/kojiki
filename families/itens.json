@@ -1,0 +1,26 @@
+{
+	"name": "Itens",
+	"plugin-id": "Sprite",
+	"sid": 959621684199176,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "DragnDrop",
+			"name": "DragDrop",
+			"sid": 862786979797674
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"id_06",
+		"id_01",
+		"id_05",
+		"id_04",
+		"id_03",
+		"id_00",
+		"id_02",
+		"id_07",
+		"id_08",
+		"id_09"
+	]
+}
