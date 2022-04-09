@@ -39,6 +39,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -80,14 +88,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "bound",
-			"name": "Bound to layout",
-			"author": "Scirra",
-			"version": "r285.3",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
 			"author": "Scirra",
@@ -104,8 +104,24 @@
 		},
 		{
 			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "DragnDrop",
 			"name": "Drag & Drop",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -113,7 +129,18 @@
 	],
 	"uniqueId": "t6hmqflyd72",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Sprite6",
+			"Sprite8",
+			"TiledBackground",
+			"TiledBackground2",
+			"TiledBackground3",
+			"TiledBackground4",
+			"TiledBackground5",
+			"TiledBackground6",
+			"Sprite9",
+			"Sprite10"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -242,7 +269,8 @@
 	"families": {
 		"items": [
 			"hud",
-			"Itens"
+			"Itens",
+			"enemy"
 		],
 		"subfolders": []
 	},

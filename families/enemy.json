@@ -1,0 +1,35 @@
+{
+	"name": "enemy",
+	"plugin-id": "Sprite",
+	"sid": 857444090332713,
+	"instanceVariables": [
+		{
+			"name": "walk",
+			"type": "string",
+			"desc": "",
+			"sid": 512979135118444
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo2",
+			"sid": 557525481091235
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction2",
+			"sid": 212478758533451
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 248137090526448
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Sprite5",
+		"Sprite10"
+	]
+}

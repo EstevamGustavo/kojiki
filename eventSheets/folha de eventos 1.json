@@ -451,6 +451,41 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "Teleport",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "char_box",
+							"sid": 962218793821112,
+							"parameters": {
+								"object": "entrance_00"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "char_box",
+							"sid": 317849038127283,
+							"parameters": {
+								"x": "entrance_00.targetX",
+								"y": "entrance_00.targetY"
+							}
+						}
+					],
+					"sid": 395745946754321
+				}
+			],
+			"sid": 311737398372202
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "atack",
 			"description": "",
 			"isActiveOnStart": true,
@@ -939,6 +974,311 @@
 				}
 			],
 			"sid": 224602957772397
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "walk_mob",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "enemy",
+							"sid": 420289971404590
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-object",
+							"objectClass": "enemy",
+							"sid": 474455505647569,
+							"behaviorType": "MoveTo2",
+							"parameters": {
+								"object": "char_00",
+								"image-point": "0",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 541552236644905
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "enemy",
+							"sid": 572167783637528,
+							"behaviorType": "MoveTo2"
+						}
+					],
+					"actions": [],
+					"sid": 169992110927570,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "enemy",
+									"sid": 537050429253968,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "char_00.X"
+									}
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "enemy",
+									"sid": 627835499065334,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "char_00.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "enemy",
+									"sid": 120201383630366,
+									"parameters": {
+										"instance-variable": "walk",
+										"value": "\"walk_left\""
+									}
+								}
+							],
+							"sid": 249118806199122,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 222656348130723,
+											"parameters": {
+												"instance-variable": "walk",
+												"comparison": 0,
+												"value": "\"walk_left\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "enemy",
+											"sid": 448199543888841,
+											"parameters": {
+												"animation": "\"walk_left\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 416520084527298
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "enemy",
+									"sid": 244608178856355,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "char_00.X"
+									}
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "enemy",
+									"sid": 275029225360336,
+									"parameters": {
+										"comparison": 2,
+										"y-co-ordinate": "char_00.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "enemy",
+									"sid": 226355119822946,
+									"parameters": {
+										"instance-variable": "walk",
+										"value": "\"walk_right\""
+									}
+								}
+							],
+							"sid": 760679587956538,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 671337138128404,
+											"parameters": {
+												"instance-variable": "walk",
+												"comparison": 0,
+												"value": "\"walk_right\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "enemy",
+											"sid": 796370629303477,
+											"parameters": {
+												"animation": "\"walk_right\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 346900335414819
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "enemy",
+									"sid": 843482050482023,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "char_00.X"
+									}
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "enemy",
+									"sid": 236176093916015,
+									"parameters": {
+										"comparison": 2,
+										"y-co-ordinate": "char_00.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "enemy",
+									"sid": 730416144246449,
+									"parameters": {
+										"instance-variable": "walk",
+										"value": "\"walk_down\""
+									}
+								}
+							],
+							"sid": 341002254440904,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 299328473934517,
+											"parameters": {
+												"instance-variable": "walk",
+												"comparison": 0,
+												"value": "\"walk_down\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "enemy",
+											"sid": 537930045365179,
+											"parameters": {
+												"animation": "\"walk_down\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 577438549863836
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "enemy",
+									"sid": 359434988084427,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "char_00.X"
+									}
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "enemy",
+									"sid": 882968334055506,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "char_00.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "enemy",
+									"sid": 279819095672140,
+									"parameters": {
+										"instance-variable": "walk",
+										"value": "\"walk_up\""
+									}
+								}
+							],
+							"sid": 924206417021168,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "enemy",
+											"sid": 476788643813881,
+											"parameters": {
+												"instance-variable": "walk",
+												"comparison": 0,
+												"value": "\"walk_up\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "enemy",
+											"sid": 540697516685790,
+											"parameters": {
+												"animation": "\"walk_up\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 826077040027510
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 317141263026696
 		}
 	],
 	"sid": 588866257436957

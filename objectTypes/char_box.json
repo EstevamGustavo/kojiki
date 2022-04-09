@@ -69,6 +69,18 @@
 			"type": "number",
 			"desc": "",
 			"sid": 973518361117224
+		},
+		{
+			"name": "setX",
+			"type": "number",
+			"desc": "",
+			"sid": 390720344066548
+		},
+		{
+			"name": "setY",
+			"type": "number",
+			"desc": "",
+			"sid": 606121649321244
 		}
 	],
 	"behaviorTypes": [

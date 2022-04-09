@@ -1,22 +1,9 @@
 {
-	"name": "entrance_00",
+	"name": "Sprite8",
 	"plugin-id": "Sprite",
-	"sid": 960941245176937,
+	"sid": 558271790439871,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "targetX",
-			"type": "number",
-			"desc": "",
-			"sid": 683837202573205
-		},
-		{
-			"name": "targetY",
-			"type": "number",
-			"desc": "",
-			"sid": 769889849272519
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -31,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1467935,
+						"imageSpriteId": 413045,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 354753425914231,
+				"sid": 738193314685706,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
